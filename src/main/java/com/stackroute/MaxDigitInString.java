@@ -10,14 +10,14 @@ public class MaxDigitInString {
 		String regex="\\d";
 		Pattern p=Pattern.compile(regex);
 		Matcher m=p.matcher(alphanumeric);
-		int max=0;
+		int max=-1;
 		while(m.find()){
 			int num=Integer.parseInt(m.group());
 			if(num>max){
 				max=num;
 			}
 		}
-		if(alphanumeric==null || max==0){
+		if(alphanumeric==null || alphanumeric.equals("null")){
 			return -1;
 		}
 		return max;
@@ -28,7 +28,7 @@ public class MaxDigitInString {
     	Scanner s=new Scanner(System.in);
     	String input=s.nextLine();
     	int result=MaxDigitInString.getMaxDigit(input);
-    	if(result>0){
+    	if(result>=0){
     		System.out.println("Maxdigit:"+result);
     	}
     	else{

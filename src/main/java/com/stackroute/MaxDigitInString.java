@@ -7,6 +7,9 @@ import java.util.regex.Pattern;
 public class MaxDigitInString {
 
 	public static int getMaxDigit(String alphanumeric) {
+		if(alphanumeric==null || alphanumeric.equals(null)){
+			return -1;
+		}
 		String regex="\\d";
 		Pattern p=Pattern.compile(regex);
 		Matcher m=p.matcher(alphanumeric);
@@ -17,9 +20,7 @@ public class MaxDigitInString {
 				max=num;
 			}
 		}
-		if(alphanumeric==null || alphanumeric.equals("null")){
-			return -1;
-		}
+
 		return max;
 	}
 
